@@ -20,7 +20,6 @@ _EOF_
 if [ -f "$tmpfile" ]; then
 	source $tmpfile
 	if [[ $(( $LAST_TS + $update_period )) -lt $(date +%s) ]]; then
-		echo "$(( $LAST_TS + $update_period )) is less than $(date +%s)"
 		update
 	fi
 else
