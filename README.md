@@ -37,8 +37,8 @@ Reload TMUX environment:
 
 ### Limitations
 
-The script will check for your public IP address on 60 seconds interval by default.
-If you want to change this, see the `scripts/public_ip.sh`
+The script will check for your public IP address on 60 seconds interval by default
+If you want to change this, see the `scripts/public_ip.sh` file.
 
 ### License
 

@@ -8,10 +8,9 @@ update() {
 	dig=$(which dig 2>/dev/null)
 	if [[ -z $dig ]]; then
 		echo "install 'dig'"
-		exit;
+		exit
 	fi
 
-	echo updating
 	cat << _EOF_ > $tmpfile
 LAST_TS=$(date +%s)
 IP_ADDR=$($dig +short myip.opendns.com @resolver1.opendns.com)
