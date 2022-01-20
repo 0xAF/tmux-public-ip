@@ -16,7 +16,7 @@ Add plugin to the list of TPM plugins in `.tmux.conf`:
 
 Hit `prefix + I` to fetch the plugin and source it.
 
-`#{online_status}` interpolation should now work.
+`#{public_ip}` interpolation should now work.
 
 ### Manual Installation
 
