@@ -2,7 +2,7 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 do_interpolation() {
-	local interpolated="${1/\#\{public_ip\}/\#($CURRENT_DIR/scripts/public_ip.sh)}"
+	local interpolated="${1/\#\{public_ip\}/#($CURRENT_DIR/scripts/public_ip.sh)}"
 	echo "$interpolated"
 }
 
