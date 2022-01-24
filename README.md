@@ -1,6 +1,6 @@
 # Tmux Public IP Plugin
 
-Shows your **Public IP** address and/or other data (like **Country**, **City**, **GPS Coordinates**, **ISP**, etc.), provided in JSON format by [ifconfig.co](https://ifconfig.co/json) and [ipinfo.io](https://ipinfo.io/json) and others.
+Shows your **Public IP** address and/or other data (like **Country**, **City**, **GPS Coordinates**, **ISP**, etc.), provided in JSON format by [ifconfig.co](https://ifconfig.co/json), [ipinfo.io](https://ipinfo.io/json) and others.
 
 The plugin will add new `#{public_ip}` format, which you can use in `status-left` or `status-right`.
 
