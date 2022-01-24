@@ -10,7 +10,7 @@ You can add the JSON key as parameter. Default is '**ip**'.
 
     set -g status-right "IP: #{public_ip} | Country #{public_ip country} | #{public_ip city} | %a %h-%d %H:%M "
 
-Check out [ifconfig.co JSON file](https://ifconfig.co/json) (or your profiver's JSON file) for possible parameters.
+Check out [ifconfig.co JSON output](https://ifconfig.co/json) (or your provider's JSON) for possible parameters.
 
 
 ### Plugin Configuration:
