@@ -1,12 +1,37 @@
-# Tmux public IP
+# Tmux Public IP Plugin
 
-Tmux plugin that enables displaying of your public IP address in your status line.
+Shows your **Public IP** address and/or other data (like **Country**, **City**, **GPS Coordinates**, **ISP**, etc.), provided in JSON format by [ifconfig.co](https://ifconfig.co/json) and [ipinfo.io](https://ipinfo.io/json) and others.
 
 The plugin will add new `#{public_ip}` format, which you can use in `status-left` or `status-right`.
 
-Quick test:
+You can add the JSON key as parameter. Default is '**ip**'.
 
-    set -g status-right "IP: #{public_ip} | %a %h-%d %H:%M "
+### Example:
+
+    set -g status-right "IP: #{public_ip} | Country #{public_ip country} | #{public_ip city} | %a %h-%d %H:%M "
+
+Check out [ifconfig.co JSON file](https://ifconfig.co/json) (or your profiver's JSON file) for possible parameters.
+
+
+### Plugin Configuration:
+| param | description | default |
+| --- | --- | --- |
+| **@public_ip_dir** | Temp dir to store JSON cache file | ~/.tmux/public_ip.tmp |
+| **@public_ip_tmp_file** | Temp file for JSON data (saved in temp dir) | info.json |
+| **@public_ip_json_url** | URL for JSON data | https://ifconfig.co/json |
+| **@public_ip_refresh_seconds** | Time before refreshing the data. Most providers will ban you if you refresh more than once in a minute | 60 |
+
+Example configuration:
+
+    set -g @public_ip_dir '/tmp'
+    set -g @public_ip_tmp_file 'tmux-pip.json'
+    set -g @public_ip_json_url 'https://ipinfo.io/json'
+    set -g @public_ip_refresh '120'
+
+
+---
+
+
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
