@@ -14,3 +14,8 @@ get_tmux_option() {
 		echo "$option_value"
 	fi
 }
+
+is_osx() {
+	[ $(uname) == "Darwin" ]
+}
+

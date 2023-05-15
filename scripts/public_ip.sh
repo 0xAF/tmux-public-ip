@@ -61,8 +61,14 @@ public_ip_helper() {
 	mkdir -p "$(pip_dir)"
 
 	# if cache file is missing or is older than 60 seconds, then refresh
-	if [[ ! -f "$cache" || $(( `date +%s` - `stat -L --format %Y "$cache"` )) -gt $refresh ]]; then
-		curl -s "$_PIP_URL" -o "$cache"
+	if is_osx; then
+		if [[ ! -f "$cache" || $(( $(date +%s) - $(stat -t %s -f %m -- "$cache") )) -gt $refresh ]]; then
+			curl -s "$_PIP_URL" -o "$cache"
+		fi
+	else
+		if [[ ! -f "$cache" || $(( $(date +%s) - $(stat -L --format %Y "$cache") )) -gt $refresh ]]; then
+			curl -s "$_PIP_URL" -o "$cache"
+		fi
 	fi
 
 	grep -o "\"$key\": \"[^\"]*" "$cache" | grep -o '[^"]*$'
